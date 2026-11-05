@@ -1,0 +1,238 @@
+/* ==========================================
+   1. Design System & CSS Variables (색상 및 폰트 설정)
+   ========================================== */
+:root {
+  --color-bg: #FDFBF7;         /* 따뜻한 크림 베이지 (배경) */
+  --color-text: #2F3E46;       /* 다크 차콜 (본문 텍스트) */
+  --color-primary: #8FBC8F;    /* 세이지 그린 (포인트 및 네비게이션) */
+  --color-accent: #D87A5B;     /* 테라코타 (버튼 및 강조) */
+  --color-white: #FFFFFF;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+/* ==========================================
+   2. Global & Reset Styles (기본 스타일 및 타이포그래피)
+   ========================================== --> */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ==========================================
+   3. Header & Navigation (모바일 우선 네비게이션)
+   ========================================== */
+header {
+  background-color: var(--color-white);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2ded9;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* 모바일: 수직 정렬 */
+  gap: 0.5rem;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 0.75rem 1rem; /* 터치 타겟 44px 이상 확보 */
+  min-height: 44px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   4. Main Content & Layout (본문 및 카드 그리드)
+   ========================================== */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 카드 및 섹션 내부 요소를 위한 Flex 컨테이너 예시 */
+.card-row, .services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #F7F5F0;
+  padding: 1.25rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 미디어 및 이미지 반응형 처리 */
+img, picture {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* ==========================================
+   5. Forms & Interactive Elements (폼 및 버튼)
+   ========================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(143, 188, 143, 0.25);
+}
+
+/* 유효성 검사 스타일링 (:valid / :invalid 패턴) */
+input:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+button, .btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #c06948;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================
+   6. Media Queries (태블릿 및 데스크톱 반응형 확장)
+   ========================================== */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: row; /* 태블릿 이상: 수평 네비게이션으로 전환 */
+    gap: 1rem;
+  }
+
+  .card-row, .services-container {
+    flex-direction: row; /* 다단 레이아웃 전환 */
+  }
+
+  .card {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.05rem;
+  }
+  
+  main {
+    max-width: 1100px; /* 큰 화면에서 텍스트 줄 길이(Measure)가 너무 길어지지 않도록 제한 */
+  }
+}
+
+/* ==========================================
+   7. Accessibility & User Preferences (접근성 미디어 쿼리)
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

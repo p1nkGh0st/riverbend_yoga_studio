@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Riverbend Yoga Studio - Events & Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Riverbend Yoga Studio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services & Classes</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="events.html">Events & Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Monthly Workshop List</h2>
+            <ul>
+                <li><strong>Weekend Healing Sound Bath:</strong> Experience deep meditative relaxation accompanied by live singing bowl vibrations (Last Saturday of every month).</li>
+                <li><strong>Foundational Yoga Masterclass:</strong> A dedicated workshop focusing on correct breathing techniques and fundamental postures (Second Sunday of every month).</li>
+            </ul>
+
+            <figure>
+                <img src="media/yoga-workshop.jpg" alt="Participants engaged in a guided breathing exercise during a weekend studio workshop">
+                <figcaption>Students exploring deep relaxation during our monthly weekend workshop</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Request a Spot / Inquiry Form</h2>
+            <form action="/submit-inquiry" method="post">
+                <fieldset>
+                    <legend>Student Information & Class Interest</legend>
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="chris Lee">
+                    <br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="chris@example.com">
+                    <br><br>
+
+                    <label for="interest">Class or Event Interest:</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Please select an option</option>
+                        <option value="gentle">Gentle Yoga Class</option>
+                        <option value="vinyasa">Vinyasa Yoga Class</option>
+                        <option value="restorative">Restorative Yoga Class</option>
+                        <option value="workshop">Monthly Workshop</option>
+                    </select>
+                    <br><br>
+
+                    <label for="level">Experience Level:</label>
+                    <input type="text" id="level" name="level" placeholder="e.g., Absolute Beginner, 6 months">
+                    <br><br>
+
+                    <label for="contact-method">Preferred Contact Method:</label>
+                    <input type="text" id="contact-method" name="contact-method" placeholder="e.g., Email or Phone text">
+                    <br><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" required minlength="10" maxlength="500" placeholder="Please share any questions or special requests..."></textarea>
+                </fieldset>
+                <br>
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Riverbend Yoga Studio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
