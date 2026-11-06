@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Riverbend Yoga Studio - Events & Contact</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Riverbend Yoga Studio</h1>
@@ -22,24 +24,28 @@
         <section>
             <h2>Monthly Workshop List</h2>
             <ul>
-                <li><strong>Weekend Healing Sound Bath:</strong> Experience deep meditative relaxation accompanied by live singing bowl vibrations (Last Saturday of every month).</li>
-                <li><strong>Foundational Yoga Masterclass:</strong> A dedicated workshop focusing on correct breathing techniques and fundamental postures (Second Sunday of every month).</li>
+                <li><strong>Weekend Healing Sound Bath:</strong> Experience deep meditative relaxation accompanied by
+                    live singing bowl vibrations (Last Saturday of every month).</li>
+                <li><strong>Foundational Yoga Masterclass:</strong> A dedicated workshop focusing on correct breathing
+                    techniques and fundamental postures (Second Sunday of every month).</li>
             </ul>
 
             <figure>
-                <img src="media/yoga-workshop.jpg" alt="Participants engaged in a guided breathing exercise during a weekend studio workshop">
+                <img src="media/yoga-workshop.jpg"
+                    alt="Participants engaged in a guided breathing exercise during a weekend studio workshop">
                 <figcaption>Students exploring deep relaxation during our monthly weekend workshop</figcaption>
             </figure>
         </section>
 
         <section>
             <h2>Request a Spot / Inquiry Form</h2>
-            <form action="/submit-inquiry" method="post">
+            <form action="#" method="post">
                 <fieldset>
                     <legend>Student Information & Class Interest</legend>
-                    
+
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="chris Lee">
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50"
+                        placeholder="chris Lee">
                     <br><br>
 
                     <label for="email">Email:</label>
@@ -61,20 +67,36 @@
                     <br><br>
 
                     <label for="contact-method">Preferred Contact Method:</label>
-                    <input type="text" id="contact-method" name="contact-method" placeholder="e.g., Email or Phone text">
+                    <input type="text" id="contact-method" name="contact-method"
+                        placeholder="e.g., Email or Phone text">
                     <br><br>
 
                     <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" required minlength="10" maxlength="500" placeholder="Please share any questions or special requests..."></textarea>
+                    <textarea id="message" name="message" required minlength="10" maxlength="500"
+                        placeholder="Please share any questions or special requests..."></textarea>
                 </fieldset>
                 <br>
                 <button type="submit">Submit Request</button>
             </form>
+        </section>
+        <section style="margin-top: 20px;">
+            <h2>Frequently Asked Questions</h2>
+            <button id="faq-toggle-btn"
+                style="padding: 10px 15px; background-color: #d97706; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                What should I bring to class?
+            </button>
+            <div id="faq-content"
+                style="display: none; margin-top: 10px; padding: 10px; background-color: #f9f9f9; border-left: 3px solid #d97706;">
+                <p>Please bring a comfortable yoga mat, a water bottle, and an open mind. We provide blocks and straps
+                    at the studio!</p>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Riverbend Yoga Studio. All rights reserved.</p>
     </footer>
+    <script src="scripts.js" defer></script>
 </body>
+
 </html>
